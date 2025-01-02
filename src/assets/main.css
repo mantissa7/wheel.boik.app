@@ -32,9 +32,6 @@ body {
   min-height: 100vh;
   color: var(--colour-text);
   background: var(--background-colour) url('/hat.png') fixed center no-repeat;
-  transition:
-    color 0.5s,
-    background-color 0.5s;
   line-height: 1.6;
   font-family:
     Inter,
@@ -65,15 +62,6 @@ body {
   grid-template-rows: max-content 1fr;
   padding: 0 2rem;
   place-items: center;
-}
-
-h1 {
-  transition: all 1s ease;
-
-  &:hover {
-    font-family: "dune";
-    letter-spacing: 2em;
-  }
 }
 
 h2 {

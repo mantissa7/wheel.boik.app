@@ -49,7 +49,7 @@
     const check = () => {
       spinResult.value = '';
       requestAnimationFrame(() => {
-        const bb = ticker.value?.getBoundingClientRect();
+        const bb = ticker.value?.getBoundingClientRect()!;
         const under = document.elementsFromPoint(bb?.x, bb?.y + (bb?.height / 2));
         for (const el of under) {
           if (el.classList.contains('chunk')) {
@@ -181,10 +181,7 @@
     height: 50px;
     margin: auto;
     transform: translateX(50%);
-    filter: drop-shadow(#000 1px 1px 0px)
-            drop-shadow(#000 -1px -1px 0px)
-            drop-shadow(#000 1px -1px 0px)
-            drop-shadow(#000 -1px 1px 0px);
+    filter: drop-shadow(#000 1px 1px 0px) drop-shadow(#000 -1px -1px 0px) drop-shadow(#000 1px -1px 0px) drop-shadow(#000 -1px 1px 0px);
 
     &::before {
       position: absolute;

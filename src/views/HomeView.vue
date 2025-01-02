@@ -13,6 +13,7 @@
 <template>
   <header>
     <h1>Wheel Boik</h1>
+    <h1>VOTE GUNE</h1>
   </header>
   <main>
     <div class="wheel-box">
@@ -26,7 +27,37 @@
 
 <style scoped>
   header {
+    position: relative;
     margin-top: 40px;
+    text-align: center;
+    width: 100%;
+
+    :nth-child(1) {
+      transition: all 250ms ease;
+      transition-delay: 1s;
+    }
+
+    :nth-child(2) {
+      transition: all 1s ease;
+      opacity: 0;
+      font-family: "dune";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+    }
+
+    &:hover {
+      :nth-child(1) {
+        opacity: 0;
+        transition: none;
+      }
+
+      :nth-child(2) {
+        opacity: 1;
+        letter-spacing: 2em;
+      }
+    }
   }
 
   main {

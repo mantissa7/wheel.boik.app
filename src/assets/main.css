@@ -6,15 +6,32 @@
   font-weight: normal;
 }
 
+
+@font-face {
+  font-family: 'dune';
+  src: url('/fonts/Dune_Rise.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
+  --icon-colour: #fffa;
   --colour-text: #fff;
-  --colour-background: #333;
+  --text-colour: #fff;
+  --background-colour: #1a1a1a;
+  --background-colour-soft: #242424;
+  --background: var(--background-colour);
+
+  --border-colour: #fff6;
+  --border: 1px solid var(--border-colour);
+
+  --active-background: hsl(from var(--background-colour) h s calc(l*1.5));
 }
 
 body {
   min-height: 100vh;
   color: var(--colour-text);
-  background: var(--colour-background) url('/hat.png') fixed center no-repeat;
+  background: var(--background-colour) url('/hat.png') fixed center no-repeat;
   transition:
     color 0.5s,
     background-color 0.5s;
@@ -39,36 +56,65 @@ body {
 }
 
 #app {
+  min-height: 100vh;
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
-  /* background: url('/hat.png') fixed center; */
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  padding: 0 2rem;
+  place-items: center;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-}
+h1 {
+  transition: all 1s ease;
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+  &:hover {
+    font-family: "dune";
+    letter-spacing: 2em;
   }
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
+h2 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+input {
+  background: var(--background);
+  border: 1px solid var(--border-colour);
+  padding: 2px 20px;
+  height: 40px;
+  color: var(--text-colour);
+  width: 100%;
+  border-radius: 20px;
+}
+
+button {
+  --background: var(--active-background);
+
+  padding: 3px 8px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: var(--background);
+  border: var(--border);
+  color: var(--text-colour);
+  border-radius: 20px;
+  height: 40px;
+  cursor: pointer;
+  display: grid;
+  grid-auto-flow: column;
+  place-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  >svg {
+    padding: 3px;
   }
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+  &:hover {
+    background: hsl(from var(--background) h s calc(l*1.5));
   }
 }

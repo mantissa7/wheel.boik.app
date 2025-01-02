@@ -6,7 +6,7 @@
   }>();
 
   const addRow = (e: Event) => {
-    props.labels.push('test');
+    props.labels.push('Vote Gune');
   }
 
   const eatSliceDontDie = (idx: number) => {
